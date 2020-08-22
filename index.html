@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Happy Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#" class="icon solid fa-home"><span>Home</span></a>
+						<a href="#projects" class="icon solid fa-folder"><span>Projects</span></a>
+						<a href="#education" class="icon solid fa-book-open"><span>Eduation</span></a>	
+						<a href="#work" class="icon solid fa-briefcase"><span>Experience</span></a>	
+						<a href="#skills" class="icon solid fa-paint-brush"><span>Skills</span></a>	
+						<a href="Happy Sisodia- Resume.pdf" class="icon solid fa-cloud-download-alt"><span>Resume</span></a>			
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<!-- Me -->
+							<article id="home" class="panel intro">
+								<header>
+									<h1>Happy Sisodia</h1>
+									<p>Data Scientist</p>
+								</header>
+								<a href="#projects" class="jumplink pic">
+									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
+									<img src="images/me.jpg" alt="happy" />
+								</a>
+							</article>
+
+						<!-- Projects -->
+							<article id="projects" class="panel">
+								<header>
+									<h1> Academic Projects</h1>
+								</header>							
+								<p>
+									I have worked on multiple Machince learning and deep learning projects. Shown below are some of 
+									those projects. For the source code please check out my page at <a href = "https://github.com/happysisodia"> GitHub!</a>
+								</p>
+								<ol>
+									<li><a href="#c1">Convulational Neural Network for Image Classification</a></li>
+									<li><a href="#c2">Multi-layer Feed-Forward Neural Network to predict injury Severity</a></li>
+									<li><a href="#c3">K-Means Clustering using random matrix sparsification</a></li>
+									<li><a href="#c4">Multi-label categorization of of construction project documents</a></li>
+									<li><a href="#c5">Image Segmentation using Fully Convolutional Network</a></li>
+								</ol>
+								<h3 id ="c1" >Convulational Neural Network for Image Classification</h3>
+									I built an Convulational Neural Network (CNN) using Sequential method of Keras to predict the label
+									of an Image. The dataset I used was CIFAR-10, which consists of 60,000 tiny 32*32*3 color images.
+									I normalized the Image so that the squashing function does not suffer from Exploding gradient problem. 
+								</br>
+									The Graph below shows the Accuracy of the model during the traning and testing phase of the model.
+									The Accuracy of the model for the validation data set was 76%.									
+								<img src="images/Accuracy.png" width="600" height="400"/>
+								</br>
+								The Result of the model on a small set of Images is given below. It successfully predicted 8 out of 9
+								Images. 
+								</br>
+								<img src="images/CNNp.png" width="600" height="400"/>
+								</br>
+								</br>
+								<h3 id = "c2">Multi-layer Feed-Forward Neural Network to predict injury Severity</h3>
+									The Main purpose of the project was is to examine the relationship between driver injury severity, driver, 
+									vehicle and roadway condition.
+								</br>
+									<b>Dataset:</b> The dataset used was Fatal Analysis Reporting System (FARS). For the purpose of this paper, 
+									 data of only 2018 was used, which consisted of around 70,000 records.
+								</br>
+									<b>EDA:</b> I did a detailed Exploratory data analysis of the dataset. Out of nearly 100 fields, I selected 8 fields which 
+									were though to contribute most to the task and did not conflict with one another. The graphs below show the relationship 
+									between different fields and helped me understand the data more easily!
+								</br>
+								<img src="images/EDAstates.JPG" width="600" height="400"/>
+								</br>
+								<img src="images/EDABAC.JPG" width="300" height="300"/>
+								<img src="images/heatmap.JPG" width="400" height="300"/>
+								</br>
+									 Some of the fields taken had too many values, thus some of the values that were similar were integrated into one.
+									 All the values were normailized so that so the field that had more reange did not affect the model.
+								</br>
+									The Neural Network was made using onlu numpy and none of the premade libraries were uses. The NN was Feed-Forward with 2 layers.
+									All the different values like Learning Rate, momentum and weights were decide based on trial and error. The Neural Network predicted 
+									with an accuracy of 45% for multiclass Classification and 60% for binary classification. The graph below shows the accuracy of the model. 
+								</br>
+								<img src="images/NNacc.png" width="450" height="350"/>
+								</br>
+								<h3 id = "c3">K-Means Clustering using random matrix sparsification</h3>
+									In this project I analysed and compared the performance of K-means on data matrix A and Sparse Data Matrix. Lloyd's K-means uses
+									Euclidean distance between each data point to form a cluster. This is one of the major bottlenecks with this algorithm, especially 
+									for large amount of data, the time complexity will increase.
+								<br>
+									To Address this issue Dr K sinha suggested another method which would decrease the time taken be k-means to reach optimal solution.
+									The steps to be followed for this are as follows
+									<ul>
+										<li>Apply Random Projection on Data matrix A</li>
+										<li>Obtain Sparse Matrix Ã from data matrix A</li>
+										<li>Apply K-means algorithm on Ã to obtain cluster and their centers</li>
+									</ul> 
+									I applied this steps on MINST datasets to verify if the results were optimal. The figure 1 and 2 show the results of applying K-means
+									on raw data. Whereas the figure 3 and 4 show the results of applying K-means on Sparse Data.
+									<br>
+									<img src="images/rawclust.PNG" width="400" height="350"/>
+									<img src="images/minstrawdata.PNG" width="350" height="200"/> 
+									<br>
+									Results for Sparse Data
+									<br>
+									<img src="images/sparseclust.PNG" width="400" height="350"/>
+									<img src="images/minstsparsedata.PNG" width="350" height="200"/> 
+									<br>
+									As can be seen from the results not only did the K-means took less time on sparse data set but the result obtained were optimal.
+									<br>
+
+
+
+
+								<h3 id = "c4">Multi-label categorization of of construction project documents</h3>
+								</br>
+
+
+
+
+
+
+								<h3 id = "c5">Image Segmentation using Fully Convolutional Network</h3>
+								</br>
+							</article>
+
+						<article id="skills" class="panel">
+							<h1 style="color:#1c157a ; text-align:center"> SKILLS</h1>
+							<br>
+							<br>
+							<img src= "images/AIlogo.png" width="300" height="250" class="image left"/>
+							<b><font size= "+3" >Artificial Intelligence</font></b>
+							<br>
+							- Data Mining 
+							<br>
+							- Data Visualization (Matplotlib, Seaborn)
+							<br>
+							- Data Preparation framework (Numpy, pandas)
+							<br>
+							- Machine Learning Algorithm 
+							<br>
+							- Deep Learning Algorithms
+							<br>
+							- Neural Network
+							<br><br><br>
+							<img src= "images/programming.JPG" width="300" height="250" class="image left"/>
+							<b><font size= "+3" >Programming</font></b>
+							<br>
+							- Python
+							<br>
+							- Progress 4gl
+							<br>
+							- R   
+							<br>
+							- C / C++
+							<br>
+							- Shell Scripting 
+							<br>
+							<br>
+							<br>
+							<br>
+							<img src= "images/othrskil.png" width="300" height="250" class="image left"/>
+							<br>
+							<b><font size= "+3" >Others</font></b>
+							<br>
+							- Unix and linux based system
+							<br>
+							- MS Office
+							<br>
+							- HTML5 & CSS3
+							<br>
+							- QAD
+							<br>
+							- Github Actions
+
+						</article>	
+
+						<!-- Education -->
+							<article id="education" class="panel">
+								<h1 style="color:#1c157a ; text-align:center"> EDUCATION</h1>
+								<br><br>
+								<img src= "images/tigerPawWdm_copur.tif" width="400" height="300" class="image left"/>
+								<br>
+								<br>
+								<b><font size= "+3" color = "#e65c00">M.Sc In Computer Science</font></b>
+								<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<b><font size= "+3" color = "#e65c00" >2019-2020</font></b>
+								<br>
+
+								<img src= "images/gtu.jpg" width="400" height="300" class="image left"/>
+								<br><br><br><br><br><br><br><br>
+								<b><font size= "+3" color = "#e65c00">B.E In Computer Science</font></b>
+								<br>
+								<b><font size= "+3" color = "#e65c00">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									2011-2015</font></b>
+							</article>
+
+							<!-- Work Experience -->
+							<article id="work" class="panel">
+								<h1 style="color:#1c157a ; text-align:center"> WORK EXPERIENCE</h1>
+								<br><br>
+								<b><font size= "+2">Thirdware Global Solution</font></b>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								Mumbai, Maharashtra
+								<b><font>Software Engineer</font>
+								<ul>
+									<li> 
+										Modify existing software – QAD to fit according to the needs of the client and to upgrade 
+										 interfaces and improve performance. Development of report, maintenance screen or a whole new module. 
+									</li>
+									<li>
+										Advice customer about or perform maintenance of software system.
+									</li>
+									<li>
+										Store, retrieve and manipulate data for analysis of system capabilities and requirements.
+									</li>
+									<li>
+										Confer with project manager to obtain information on limitation and capabilities for data processing projects
+									</li>
+									<li>
+										Supervise and assign work to programmers, designers and other engineers to work and code in QAD.
+									</li>
+									<li>
+										Prepare reports concerning project specification , activities or status.
+									</li>
+									<li>
+										Worked for various clients like Lear, Watts Water and Vishay Semiconductor.
+									</li>
+								</ul>
+								
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<div id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="https://github.com/happysisodia" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/happy-sisodia-667b758b/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Copyright 2020 All rights reserved .</li>
+							</ul>
+					    </div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
